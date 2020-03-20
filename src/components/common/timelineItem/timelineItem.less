@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+.v-timeline-item
+{
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 175px;
+    height: 100%;
+    .time
+    {
+        position: absolute;
+        left: 0;
+        font-size:14px;
+        font-family:Microsoft YaHei;
+        font-weight:400;
+        color:rgba(93,102,115,1);
+    }
+    .round
+    {
+        position: absolute;
+        top: 0px;
+        left: 175px - 7px;
+        &::before
+        {
+            position: absolute;
+            content: "";
+            width:16px;
+            height:16px;
+            border-radius:50%;
+            opacity: 0.25;
+            background:rgba(45,82,242,1);
+
+        }
+        &::after
+        {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            content: "";
+            width:8px;
+            height:8px;
+            border-radius:50%;
+            background:rgba(45,82,242,1);
+        }
+    }
+    .content
+    {
+        position: relative;
+        padding-left: 50px;
+        padding-bottom: 30px;
+        box-sizing: border-box;
+        min-height: 70px;
+        // 线
+        &::before
+        {
+            position: absolute;
+            top: 12px;
+            left: 0px;
+            content: "";
+            width: 2px;
+            height: 100%;
+            background:rgba(233,235,236,1);
+        }
+    }
+    &:last-of-type
+    {
+        .content
+        {
+            &::before
+            {
+                display: none;
+            }
+        }
+    }
+}

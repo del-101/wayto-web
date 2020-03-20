@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.v-menus
+{
+    display: flex;
+
+    & > ul
+    {
+        margin-right: 10px;
+        display: flex;
+
+        & > li
+        {
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #E0E0E0;
+
+            &:first-child
+            {
+                border-radius: 2px 0px 0px 2px;
+            }
+
+            &:last-child
+            {
+                border-radius: 0px 2px 2px 0px;
+            }
+
+            &.active
+            {
+                color: #2D52F2;
+                border-color: #2D52F2;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+.v-patrol.plan.dynamic
+{
+    padding-top: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+
+    .timeline
+    {
+        
+        p
+        {
+            &:nth-of-type(1)
+            {
+                margin-bottom: 15px;
+                height: 17px;
+                line-height: 17px;
+                font-size: 16px;
+                color: rgba(24,35,52,1);
+
+                .normal
+                {
+                    color: #4FCF66;
+                }
+            }
+
+            &:nth-of-type(n+2)
+            {
+                font-size: 14px;
+                line-height: 22px;
+                color: #5D6673;
+            }
+        }
+
+        .photos
+        {
+            margin-top: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            li
+            {
+                overflow: hidden;
+                margin-right: 20px;
+                width: 76px;
+                height: 76px;
+                border-radius: 2px;
+
+                img
+                {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

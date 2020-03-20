@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.table-style-switch-btns
+{
+    margin-right: 20px;
+
+    .display-btn
+    {
+        background-color: @white-color;
+        appearance: none;
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px solid @table-menu;
+        cursor: pointer;
+        border-radius: 2px;
+
+        &.active
+        {
+            background-color: @bg-menu;
+            color: @white-color;
+        }
+
+        &:first-child
+        {
+            margin-right: 6px;
+        }
+
+        &:focus
+        {
+            outline: none;
+        }
+    }
+    
+    .display-row
+    {
+        background-image: url(~assets/table/row.png);
+
+        &.active
+        {
+            background-image: url(~assets/table/row_active.png);
+        }
+    }
+
+    .display-columun
+    {
+        background-image: url(~assets/table/columun.png);
+
+        &.active
+        {
+            background-image: url(~assets/table/columun_active.png);
+        }
+    }
+}

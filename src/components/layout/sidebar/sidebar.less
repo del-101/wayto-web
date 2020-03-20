@@ -1,0 +1,178 @@
+@charset "UTF-8";
+.layout-sidebar
+{
+    background-color: @bg-slide;
+    height: 100%;
+    // /deep/.ivu-layout-sider-trigger,
+    // .ivu-menu-dark
+    // {
+    //     background-color: transparent;
+    // }
+
+    .trigger
+    {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: -46px;
+        top: 0;
+        width: 16px;
+        height: 68px;
+        z-index: 999;
+        .iconfont
+        {
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
+    &-logo
+    {
+        display: flex;
+        text-align: center;
+        cursor: pointer;
+        height: 68px;
+        background: @main-color;
+        color: #ffffff;
+        overflow: hidden;
+        padding: 0 20px;
+        align-items: center;
+        .iconfont
+        {
+            font-size: 36px;
+            margin-right: 8px;
+            float: left;
+        }
+        .logo-img
+        {
+            display: inline-block;
+            margin-right: 10px;
+            width: 36px;
+            height: 36px;
+        }
+        .logo-text
+        {
+            white-space: nowrap;
+            font-size: 24px;
+            transition: opacity .5s;
+        }
+    }
+    .layout-sidebar-menu
+    {
+        color: #fff;
+        &.ivu-menu-light
+        {
+            background: transparent;
+        }
+        .system
+        {
+            .ivu-menu-submenu-title
+            {
+                .iconfont
+                {
+                    margin-right: 17px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .ivu-menu-vertical.ivu-menu-light
+    {
+        &::after
+        {
+            display: none;
+        }
+        .ivu-menu-item:not(.ivu-menu-submenu)
+        {
+            color: #CCCCCC;
+            background-color: @bg-slide;
+            padding: 16px 26px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            .iconfont
+            {
+                display: block;
+                font-size: 18px;
+                line-height: inherit;
+                margin-right: 19px;
+                color: #7E8791;
+            }
+            >span
+            {
+                font-size: 14px;
+                color: #7E8791;
+            }
+            &:hover
+            {
+                background-color: @bg-slide-select;
+
+                .iconfont
+                {
+                    color:  @main-color;
+                }
+                &::after
+                {
+                    width: 2px;
+                    background: @main-color;
+                    left: 0;
+                }
+                >span
+                {
+                    font-size: 14px;
+                    color: #fff;
+                }
+            }
+            
+            span
+            {
+                display: inline-block;
+                white-space: nowrap;
+                opacity: 1;
+                transition: opacity .2s;
+            }
+        }
+        .ivu-menu-item-active:not(.ivu-menu-submenu)
+        {
+            color: #CCCCCC;
+            overflow: hidden;
+            background-color: @bg-slide-select;
+            .iconfont
+            {
+                color:  @main-color;
+            }
+            &::after
+            {
+                width: 2px;
+                background: @main-color;
+                left: 0;
+            }
+            >span
+            {
+                font-size: 14px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// 收缩菜单样式
+.collapsed
+{
+    .logo-text
+    {
+        opacity: 0;
+    }
+    .ivu-menu-item
+    {
+        span
+        {
+            // display: none !important;
+            opacity: 0 !important;
+        }
+    }
+    .trigger
+    {
+        transform: rotate(-180deg);
+    }
+}

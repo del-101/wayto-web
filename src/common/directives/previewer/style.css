@@ -1,0 +1,12 @@
+/*!
+ * @Author: Evan <skcy@vip.qq.com>
+ * @Date: 2018-12-06 16:05:15
+ * @version: 1.0.0
+ * Copyright (C) 2018-2018 O&M Cloud Inc. All rights reserved. 
+ */
+
+/* 图片预览 鼠标样式 */
+.v-preview-cursor
+{
+    cursor: url("./magnifier.cur"), pointer;
+}

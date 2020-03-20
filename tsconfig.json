@@ -1,0 +1,53 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        // "strict": true,
+        "jsx": "preserve",
+        "importHelpers": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "types": ["webpack-env"],
+        "paths": {
+            "src/*": ["./src/*"],
+            "apis": ["./src/apis/"],
+            "apis/*": ["./src/apis/*"],
+            "application/*": ["./src/application/*"],
+            "assets/*": ["./src/assets/*"],
+            "config/*": ["./src/common/config/*"],
+            "enums": ["./src/common/enums/"],
+            "common/*": ["./src/common/*"],
+            "enums/*": ["./src/common/enums/*"],
+            "filters/*": ["./src/common/filters/*"],
+            "layouts/*": ["./src/common/layouts/*"],
+            "mixins": ["./src/common/mixins/"],
+            "mixins/*": ["./src/common/mixins/*"],
+            "utils": ["./src/common/utils/"],
+            "utils/*": ["./src/common/utils/*"],
+            "components/*": ["./src/components/*"],
+            "models": ["./src/models/"],
+            "models/*": ["./src/models/*"],
+            "services/*": ["./src/services/*"],
+            "routes/*": ["./src/routes*"],
+            "store/*": ["./src/store*"],
+            "views/*": ["./src/views/*"],
+            "styles/*": ["./src/styles/*"],
+            "@iview/*": ["./node_modules/iview/types/*"]
+        },
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+    ],
+    "exclude": ["node_modules"]
+}

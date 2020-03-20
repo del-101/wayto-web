@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+.components-table
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+
+
+    .ivu-table-wrapper
+    {
+        flex: auto;
+        border-width: 0;
+    }
+
+    .loading-finish
+    {
+        height: 28px;
+        line-height: 28px;
+        font-size: 12px;
+        color: @text-light;
+        text-align: center;
+    }
+
+    .loading-spain
+    {
+        display: none;
+        height: 28px;
+        line-height: 28px;
+        font-size: 12px;
+        color: @main-color;
+        text-align: center;
+
+        @keyframes loading
+        {
+            from
+            {
+                transform: rotate(0deg);
+            }
+            
+            to
+            {
+                transform: rotate(360deg);
+            }
+        }
+
+        &.active
+        {
+            display: block;
+
+            .iconfont
+            {
+                animation: loading 2s 0s ease-in-out infinite;
+            }
+        }
+
+        .iconfont
+        {
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    }
+
+    .ivu-table
+    {
+        font-size: 14px;
+        // color: @text-primary-color;
+
+        &::before
+        {
+            height: 0;
+        }
+
+        &::after
+        {
+            width: 0;
+        }
+        
+        .ivu-table-cell
+        {
+            color: #182334;   
+            .ivu-checkbox-wrapper
+            {
+                margin-right: 0;
+            }
+        }
+
+        .ivu-table-row-hover
+        {
+            // td
+            // {
+            //     background-color: transparent;
+            // }
+        }
+    }
+
+    .ivu-table-body
+    {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    //表格标题背景颜色
+    .ivu-table th
+    {
+        background-color: #F2F6F9;
+        color: #A6ABB5;
+        font-weight: 400;
+        border: none;
+        .ivu-table-cell
+        {
+            color: #A6ABB5 !important;
+        }
+        // text-align: center;
+    }
+    .ivu-table td
+    {
+        height: 64px;
+        border-bottom: 1px solid #F1F2F2;
+    }
+
+    // 显示选中框时动画
+    &.show-panel
+    {
+        .ivu-table-wrapper .ivu-table-body
+        {
+            &::after
+            {
+                height: 50px;
+            }
+        }
+    }
+
+    // 重写ivu checkbox样式
+    .ivu-checkbox-inner
+    {
+        width: 16px;
+        height: 16px;
+        // border: 1px solid #D0D1D7;
+        // border-radius: 50%;
+    }
+
+    .ivu-checkbox-checked .ivu-checkbox-inner
+    {
+        border-color: @main-color;
+
+        &:after
+        {
+            top: 2px;
+            left: 5px;
+        }
+    }
+    .ivu-radio-wrapper
+    {
+        background: aqua;
+    }
+    .pagetation-box
+    {
+        height: 40px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        // user-select: none;
+
+        &-total
+        {
+            margin-right: 20px;
+        }
+
+        .page-wrapper
+        {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ivu-page-next,
+        .ivu-page-prev
+        {
+            display: none;
+        }
+
+        .iconfont
+        {
+            display: inline-block;
+            font-size: 12px;
+            padding: 10px;
+            cursor: pointer;
+            transform: scale(.76);
+            font-weight: 600;
+
+            &.disabled
+            {
+                color: #ccc;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    // 表格无数据时样式
+    .ivu-table-tip
+    {
+        height: 100%;
+
+        td
+        {
+            text-align: center !important;
+        }
+
+        > table
+        {
+            height: 100%;
+        }
+    }
+}

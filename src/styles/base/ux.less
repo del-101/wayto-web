@@ -1,0 +1,42 @@
+// 带有i-row的分栏form表格
+.u-form
+{
+    .u-row
+    {
+        margin-bottom: 15px;
+
+        .u-col
+        {
+            padding-right: 10px;
+        }
+    }
+    .u-form-item
+    {
+        position: relative;
+        width: 100%;
+        margin-bottom: 0;
+
+        .ivu-form-item-label
+        {
+            position: relative;
+            display: flex;
+            padding: 0;
+            align-items: center;
+            font-size: 14px;
+            line-height: 20px;
+            color: #A6ABB5;
+        }
+        .ivu-form-item-label:after
+        {
+            content: "：";
+            position: relative;
+            right: 0;
+        }
+        .ivu-form-item-content
+        {
+            font-size: 14px;
+            line-height: 20px;
+            color: #182334;
+        }
+    }
+}

@@ -1,0 +1,530 @@
+@charset "UTF-8";
+
+// 公共样式
+// --------------------------------------------------
+
+// * {
+//     scrollbar-arrow-color: #0b7bb5;
+//     scrollbar-face-color: #0b7bb5;
+//     scrollbar-3dlight-color: #000000;
+//     scrollbar-highlight-color: #255780;
+//     scrollbar-shadow-color: #255780;
+//     scrollbar-darkshadow-color: #0b7bb5;
+//     scrollbar-track-color: #255780;
+//     scrollbar-base-color: #255780;
+// }
+
+::-webkit-scrollbar-thumb {
+    background-color: #dedede;
+    height: 50px;
+    outline-offset: -2px;
+    outline: 2px solid transparent;
+    border-radius: 4px;
+    border: 2px solid #dedede;
+}
+/*---鼠标点击滚动条显示样式--*/
+::-webkit-scrollbar-thumb:hover {
+    background-color: #d5d5d5;
+    height: 50px;
+    border-radius: 4px;
+    border: 2px solid #d5d5d5;
+}
+/*---滚动条大小--*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+}
+/*---滚动框背景样式--*/
+::-webkit-scrollbar-track-piece {
+    background-color: #eee;
+    border-radius: 0;
+}
+
+::-ms-clear {
+    display: none;
+}
+.font-blue
+{
+    cursor: pointer;
+}
+.textarea-tip
+{
+    text-align: right;
+    color: #A6ABB5;
+    font-size: 14px;
+}
+.common-layout
+{
+    
+    height: 100%;
+
+    .common-layout-inner-layout
+    {
+        top: 50px;
+        // height: 100%;
+        // overflow: hidden;
+    }
+    
+    .common-sider
+    {
+        // padding: 0 15px;
+        padding-top: 10px;
+        border-right: 1px solid @border-color;
+        height: 100%;
+        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    .common-sider-tree
+    {
+        &.ivu-tree ul
+        {
+            font-size: 14px;
+            line-height: 20px;
+
+            > li
+            {
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    .common-content
+    {
+        position: relative;
+        padding-left: 29px;
+        padding-bottom: 16px;
+    }
+
+    .common-option-buttons
+    {
+        position: fixed;
+        top: 68px;
+        right: 20px;
+        line-height: 20px;
+        
+        span
+        {
+            height: 20px;
+            line-height: 20px;
+            display: inline-block;
+        }
+    }
+}
+input::-webkit-input-placeholder,
+.ivu-select-placeholder
+{
+    color: #A6ABB5 !important
+}
+.oprate-a,
+.ivu-page-item-active a, .ivu-page-item-active:hover a,
+.ivu-page-next:hover a, .ivu-page-prev:hover a
+{
+    color: #2D52F2 !important;
+}
+.ivu-page-item:hover,
+.ivu-page-item-active,
+.ivu-page-next:hover, .ivu-page-prev:hover
+{
+    border-color: #2D52F2 !important;
+}
+.modify-modal
+{
+    align-items: center;
+    justify-content: center;
+    .ivu-modal
+    {
+        &-body
+        {
+            padding: 16px 30px;
+            overflow: hidden;
+            overflow-y: auto;
+            .ivu-row
+            {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .ivu-col-span-12
+            {
+                &:nth-of-type(2n)
+                {
+                    padding-left: 43px;
+                }
+            }
+            .ivu-form
+            {
+                overflow: hidden;
+                overflow-y: auto;
+                .device-select-address
+                {
+                    .ivu-select
+                    {
+                        width: 80px;
+                        margin-left: 5px;
+                        float: left;
+                    }
+                }
+                .ivu-radio-group
+                {
+                    &,&-button
+                    {
+                        .ivu-radio-group-item
+                        {
+                            font-size: 14px;
+                        }
+                    }
+                    .ivu-radio-wrapper
+                    {
+                        .ivu-radio-inner
+                        {
+                            border-color: #D4D8DA;
+                            &::after
+                            {
+                                background-color: #2D52F2;
+                            }
+                        }
+                        &-checked
+                        {
+                            .ivu-radio-inner
+                            {
+                                border-color: #2D52F2;
+                                &::after
+                                {
+                                    background-color: #2D52F2;
+                                }
+                            }
+                        }   
+                    }
+                    
+                }
+                &-item
+                {
+                    margin-bottom: 20px;
+                    &-label
+                    {
+                        text-align: left;
+                        font-size: 14px;
+                    }
+                    &-content
+                    {
+                        .ivu-date-picker
+                        {
+                            width: 100%;
+                        }
+                        .ivu-input.ivu-select,.ivu-radio-wrapper
+                        {
+                            font-size: 14px;
+                            &:hover,&:focus
+                            {
+                                border-color: @main-color;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.user-modify-modal
+{
+    align-items: center;
+    justify-content: center;
+    .ivu-modal
+    {
+        &-body
+        {
+            padding: 16px 30px;
+            overflow-y: auto;
+            .ivu-row
+            {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .ivu-col-span-12
+            {
+                &:nth-of-type(2n+1)
+                {
+                    padding-left: 43px;
+                }
+            }
+            .ivu-form
+            {
+                overflow-y: auto;
+                .ivu-radio-group
+                {
+                    &,&-button
+                    {
+                        .ivu-radio-group-item
+                        {
+                            font-size: 14px;
+                        }
+                    }
+                    .ivu-radio-wrapper
+                    {
+                        .ivu-radio-inner
+                        {
+                            border-color: #D4D8DA;
+                            &::after
+                            {
+                                background-color: #2D52F2;
+                            }
+                        }
+                        &-checked
+                        {
+                            .ivu-radio-inner
+                            {
+                                border-color: #2D52F2;
+                                &::after
+                                {
+                                    background-color: #2D52F2;
+                                }
+                            }
+                        }   
+                    }
+                    
+                }
+                .user-img-select
+                {
+                    width: 68px;
+                    height: 68px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    cursor: pointer;
+                }
+                #uloadfiles
+                {
+                    position: absolute;
+                    top: 0;
+                    left:0;
+                    height: 60px;
+                    opacity: 0;
+                    z-index: 99;
+                }
+                #uloadfiles .ivu-upload{
+                    height: 65px;
+                    width: 70px;
+                }
+
+                .customer-img-select
+                {
+                    width: 68px;
+                    height: 68px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    cursor: pointer;
+                    .upload-avatar-input
+                    {
+                        width: 68px;
+                        height: 68px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                }
+                .device-select-address
+                {
+                    .ivu-select
+                    {
+                        width: 80px;
+                        margin-left: 5px;
+                        float: left;
+                    }
+                }
+                &-item
+                {
+                    margin-bottom: 20px;
+                    &-label
+                    {
+                        text-align: left;
+                        font-size: 14px;
+                    }
+                    &-content
+                    {
+                        .ivu-date-picker
+                        {
+                            width: 100%;
+                        }
+                        .ivu-input.ivu-select,.ivu-radio-wrapper
+                        {
+                            font-size: 14px;
+                            &:hover,&:focus
+                            {
+                                border-color: @main-color;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.vertical-center-modal
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ivu-modal{
+        top: 0;
+    }
+}
+.ivu-picker-panel-body
+{
+    span
+    {
+        font-size: 14px;
+    }
+}
+.ivu-modal-confirm-footer
+{
+    .ivu-btn
+    {
+        min-width: 96px;
+        margin-top: 1px;
+        font-size: 14px;
+        border-radius: 2px;
+        padding: 0 15px;
+        height: 34px;
+        line-height: 30px;
+        &-primary
+        {
+            background: #2D52F2;
+            color: #FEFEFF;
+            &:hover
+            {
+                background: #1F44DE;
+                color: #FEFEFF;
+            }
+        }
+        &-text
+        {
+            background: #ffffff;
+            color: #182334;
+            border-color: #D5DBDE;
+            &:hover
+            {
+                background: #ffffff;
+                color: #2D52F2;
+                border-color: #2D52F2;
+            }  
+        }
+    }
+}
+// 详情标题
+.detail-title
+{
+    font-size: 16px;
+    color: #182334;
+    font-weight: bold;
+    position: relative;
+    padding-left: 10px;
+    &::before
+    {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 14px;
+        background: #2D52F2;
+        margin-right: 8px;
+    }
+}
+
+.patrol-modal
+{
+    &.ivu-modal-wrap
+    {
+        .ivu-modal-body
+        {
+            padding: 16px 30px;
+            .ivu-form
+            {
+                .device-select-address
+                {
+                    .ivu-select
+                    {
+                        width: 118px;
+                        margin-left: 5px;
+                        float: left;
+                        &:first-child
+                        {
+                            width: 166px;
+                        }
+                    }
+                }
+                &-item
+                {
+                    margin-bottom: 20px;
+                    &-label
+                    {
+                        text-align: left;
+                        font-size: 14px;
+                    }
+                    &-content
+                    {
+                        .ivu-input,.ivu-select,.ivu-radio-wrapper
+                        {
+                            font-size: 14px;
+                            &:hover,&:focus
+                            {
+                                border-color: @main-color;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 时间选择器
+.ivu-date-picker-cells-focused em
+{
+    box-shadow: 0 0 0 1px #2D52F2 inset !important;
+}
+.ivu-date-picker-cells-cell-selected em, .ivu-date-picker-cells-cell-selected:hover em
+{
+    background: #2D52F2 !important;
+}
+    
+.ivu-select-item,
+.ivu-tag-text,
+.ivu-cascader-transfer .ivu-cascader-menu-item
+{
+    font-size: 14px !important;
+}
+.ivu-select-multiple .ivu-select-item-selected:after,
+.ivu-select-item-selected, 
+.ivu-select-item-selected:hover,
+.ivu-cascader-menu .ivu-cascader-menu-item-active,
+.ivu-select-item-focus,
+.ivu-select-item:hover
+{
+    color: #2D52F2 !important;
+}
+
+.ivu-input:hover,
+.ivu-date-picker-focused input
+{
+    border-color: #2D52F2 !important;
+}
+// 图片预览 鼠标样式
+.img-preview {
+    cursor: url("~assets/magnifier.cur"), pointer;
+}

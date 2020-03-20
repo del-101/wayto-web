@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.components-select-box
+{
+    
+    flex: auto;
+
+    .components-select-box-panel
+    {
+        width: 100%;
+        // position: absolute;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        line-height: 50px;
+        z-index: 11;
+        height: 50px;
+        overflow: hidden;
+        padding: 0 20px;
+        // color: #fff;
+        font-size: 14px;
+        user-select: none;
+        overflow: hidden;
+
+        // background-color: @main-color;
+        border-top: 1px solid @border-color;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /* 动画 BEGIN */
+        &.selected-enter-active,
+        &.selected-leave-active {
+            transition: all .5s;
+        }
+
+        &.selected-enter,
+        &.selected-leave-to
+        {
+            height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            // border-width: 1px;
+        }
+        /* 动画 END */
+
+    }
+
+    &-operat
+    {
+        display: inline-block;
+        margin-left: 20px;
+    }
+}

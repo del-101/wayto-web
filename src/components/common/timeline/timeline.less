@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+.v-timeline
+{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 56px;
+    &.hide-padding
+    {
+        padding: 0;
+    }
+    .title
+    {
+        position: absolute;
+        top: 0;
+        text-indent: 12px;
+        line-height:46px;
+        font-size:16px;
+        font-family: Microsoft YaHei;
+        font-weight: 900;
+        color:rgba(24,35,52,1);
+        &::before
+        {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-block;
+            content: "";
+            width: 3px;
+            height: 16px;
+            background:rgba(45,82,242,1);
+        }
+        &.hide
+        {
+            display: none;
+        }
+    }
+    .timeline-item:last-child
+    {
+        .content:before
+        {
+            display: none;
+        }
+    }
+}

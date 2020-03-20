@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+.v-patrol.plan
+{
+    height: 100%;
+
+    .col-item
+    {
+        height: 80px;
+    }
+
+    .detail
+    {
+        position: relative;
+        box-sizing: border-box;
+        padding: 80px 30px 0 40px;
+        height: 100%;
+
+        & > .name
+        {
+            position: absolute;
+            top: 0;
+            height: 80px;
+            line-height: 80px;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgba(24,35,52,1);
+        }
+
+        & > .tabs
+        {
+            position: relative;
+            padding-top: 50px;
+            box-sizing: border-box;
+            height: 100%;
+
+            .ivu-tabs-bar
+            {
+                position: absolute;
+                top: 0;
+                width: 100%;
+
+                .ivu-tabs-tab
+                {
+                    padding: 5px 30px 4px;
+                }
+            }
+            
+            .ivu-tabs-content
+            {
+                height: 100%;
+            }
+        }
+
+        & > .ctrl
+        {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            
+            button
+            {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.v-patrol-modal.plan
+{
+}

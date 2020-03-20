@@ -1,0 +1,7 @@
+{
+    "defaultSeverity": "warning",
+    "extends": ["tslint-config-flagwind"],
+    "linterOptions": {
+        "exclude": ["node_modules/**", "src/common/position/pca-code.ts"]
+    }
+}

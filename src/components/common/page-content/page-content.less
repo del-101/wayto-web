@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+.page-content
+{
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+    background-color: #fff;
+    
+    .ivu-input,.ivu-select-input
+    {
+        font-size: 14px;
+    }
+    .operation
+    {
+        max-height: 66px;
+        min-height: 66px;
+        transition:  max-height .3s;
+        overflow: hidden;
+        padding: 30px 30px 0 30px;
+        &.open
+        {
+            max-height: 500px;
+        }
+        
+        .shrink
+        {
+            display: flex;
+            justify-content: space-between;
+            .operation-search
+            {
+                .ivu-form-item
+                {
+                    float: left;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-right: 20px;
+                    margin-bottom: 2px;
+                    &-label
+                    {
+                        color: @text-182;
+                        padding: 0;
+                        font-size: 14px;
+                    }
+                    &-content
+                    {
+                        
+                        .ivu-input-wrapper,.ivu-select
+                        {
+                            width: 204px;
+                            input,.ivu-select-selection
+                            {
+                                border-radius: 0;
+                            }
+                        }
+                        button
+                        {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            .operation-btn
+            {
+                button
+                {
+                    margin-left: 10px;
+                }
+            }
+        }
+        .senior
+        {
+            margin-top: 15px;
+            .ivu-form
+            {
+                display: flex;
+                flex-direction: column;
+                .item-spick .ivu-input-wrapper
+                {
+                    width: 250px;
+                }
+                .input-item
+                {
+                    margin-top: 10px;
+                }
+                &-item
+                {
+                    margin-bottom: 0;
+                    display: flex;
+                    align-items: center;
+                    &.date
+                    {
+                        margin: 10px 0;
+                    }
+                    &-label
+                    {
+                        padding: 0;
+                        font-size: 14px;
+                        // margin-right: 20px;
+                        min-width: 80px;
+                        text-align: left;
+                    }
+                    &-content
+                    {
+                        .ivu-date-picker
+                        {
+                            width: 200px;
+                        }
+                        .ivu-select
+                        {
+                            width: 200;
+                            height: 34px;
+                        }
+                        .ivu-radio-group
+                        {
+                            display: flex;
+                            align-items: center;
+                            .ivu-radio-wrapper
+                            {
+                                font-size: 14px;
+                                font-weight: 400;
+                                // width: 80px;
+                                min-width: 60px;
+                                max-width: 100px;
+                                overflow: hidden; 
+                                text-overflow: ellipsis; 
+                                white-space:nowrap;
+                                margin-right: 10px;
+                                .ivu-radio
+                                {
+                                    display: none;
+                                }
+                                &-checked
+                                {
+                                    color: @main-color;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+
+    .page-list-table
+    {
+        flex: 1;
+        margin-top: 20px;
+        overflow: hidden;
+        position: relative;
+        .ivu-table-cell
+        {
+            // color: @auxiliary-color;
+        }
+        .oprate-btn-all
+        {
+            a
+            {
+                margin-right: 10px;
+                color: @main-color;
+            }
+        }
+    }
+    
+}

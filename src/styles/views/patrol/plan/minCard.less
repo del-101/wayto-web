@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+.v-patrol.plan.min-card
+{
+    position: relative;
+    padding: 20px 0 20px 20px;
+    box-sizing: border-box;
+    min-height: 110px;
+
+    .info
+    {
+        position: relative;
+
+        & > p
+        {
+            line-height: 24px;
+
+            &:nth-of-type(1)
+            {
+
+                & > span
+                {
+
+                    &:nth-of-type(1)
+                    {
+                        overflow: hidden; 
+                        text-overflow: ellipsis; 
+                        white-space:nowrap;
+                        margin-bottom: 5px;
+                        padding-right: 40px;
+                        box-sizing: border-box;
+                        display: block;
+                        height: 32px;
+                        line-height:32px;
+                        font-size:18px;
+                        font-family:Microsoft YaHei;
+                        font-weight:bold;
+                        color:rgba(24,35,52,1);
+                    }
+
+                    &:nth-of-type(2)
+                    {
+                        position: absolute;
+                        top: 5px;
+                        right: 0;
+                        display: inline-block;
+                        width:45px;
+                        height:20px;
+                        line-height:18px;
+                        border-radius:10px;
+                        font-weight:400;
+                        font-size:12px;
+                        text-align: center;
+                        border:1px solid rgba(79,207,102,1);
+                        color: #4FCF66;
+
+                        &.leave
+                        {
+                            border-color: #4B7EFE;
+                            color: #4B7EFE;
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(2)
+            {
+                
+                & > span
+                {
+
+                    &:nth-of-type(1)
+                    {
+                        display: inline-block;
+                        width: 180px;
+                    }
+
+                    &:nth-of-type(2)
+                    {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
