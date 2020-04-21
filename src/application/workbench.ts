@@ -8,10 +8,11 @@
 import { WorkbenchBase, ApplicationContextBase, Logger, ConsoleLogHandler } from "uxmid-core";
 import ApplicationContext from "./context";
 import Workspace from "./workspace";
+import { ApplicationRepository } from "../repository";
 
 import Vue from "vue";
 import Router from "vue-router";
-import routes from "../routes";
+import { routes, menus } from "../routes";
 import Vuex from "vuex";
 import modules from "../store";
 
@@ -202,9 +203,23 @@ export default class Workbench extends WorkbenchBase
     {
         // 注册路由组件
         Vue.use(Router);
+
+        // TODO 用仓储或者直接用context 可能用context更好
+        const applicationRepository = context.serviceFactory.getProvider("").resolve<ApplicationRepository>(ApplicationRepository);
+
+        // TODO 处理权限
+
+        // TODO 存储以供后续使用
+        applicationRepository.applicationMenu = menus;
         
         // 初始化路由程序
         let router = new Router({mode: "history", routes});
+
+        // TODO 权限全局守卫
+        router.beforeResolve(async (to, from, next) =>
+        {
+            next();
+        });
         
         // 设置路由程序
         context.router = router;

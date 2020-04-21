@@ -11,29 +11,41 @@ const admin = (resolve: any) => (<any>require).ensure([], () => resolve(require(
 import system from "./modules/system";
 import patrol from "./modules/patrol";
 
-const routes =
+function resolveRoutes(menus)
+{
+    let result =
+    [
+        {
+            path: "/",
+            redirect: "/login"
+        },
+        {
+            name: "login",
+            path: "/login",
+            component: (resolve: any) => (<any>require).ensure([], () => resolve(require("views/login")), "login")
+        },
+        {
+            name: "home",
+            path: "/home",
+            redirect: "/system"
+        },
+        ...menus
+        // ...error
+    ];
+    return result;
+}
+
+const menus =
 [
-    {
-        path: "/",
-        redirect: "/login"
-    },
-    {
-        name: "login",
-        path: "/login",
-        component: (resolve: any) => (<any>require).ensure([], () => resolve(require("views/login")), "login")
-    },
-    {
-        name: "home",
-        path: "/home",
-        redirect: "/system"
-    },
     {
         name: "system",
         path: "/system",
         component: admin,
         meta:
         {
-            title: "系统管理"
+            title: "系统管理",
+            label: "系统管理",
+            icon: "iconfont iconicon_xitongguanli"
         },
         children:
         [
@@ -46,7 +58,9 @@ const routes =
         component: admin,
         meta:
         {
-            title: "巡查管理"
+            title: "巡查管理",
+            label: "巡查管理",
+            icon: "iconfont iconicon_xunchaguanli"
         },
         children:
         [
@@ -55,4 +69,10 @@ const routes =
     }
 ];
 
-export default routes;
+const routes = resolveRoutes(menus);
+
+export
+{
+    menus,
+    routes
+};

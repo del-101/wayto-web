@@ -28,6 +28,9 @@
 
 <script lang="ts">
 import { component, Component, watch } from "uxmid-web";
+import { ApplicationRepository } from "../../../repository";
+import { IMenu } from "models";
+import { service } from "../../../common/decorator";
 
 /**
  * 表示一个公共侧边栏组件。
@@ -37,6 +40,9 @@ import { component, Component, watch } from "uxmid-web";
 @component
 export default class Sidebar extends Component
 {
+    @service("ApplicationRepository")
+    private applicationRepository: ApplicationRepository;
+
     /**
      * 获取和设置展开当前菜单。
      * @protected
@@ -71,21 +77,9 @@ export default class Sidebar extends Component
      * 模块列表
      * @protected
      * @property
-     * @returns {Array<any>}
+     * @returns {Array<IMenu>}
      */
-    protected menus: Array<any> =
-    [
-        {
-            name: "system",
-            label: "系统设置",
-            icon: "iconfont iconicon_xitongguanli"
-        },
-        {
-            name: "patrol",
-            label: "巡查管理",
-            icon: "iconfont iconicon_xunjianguanli"
-        }
-    ];
+    protected menus: Array<IMenu> = [];
 
     /**
      * 当路由发生变化的时候操作。
@@ -123,6 +117,29 @@ export default class Sidebar extends Component
     protected toHome(): void
     {
         this.$router.push("/home");
+    }
+
+    /**
+     * created钩子
+     */
+    private created(): void
+    {
+        const menus = this.applicationRepository.applicationMenu;
+        this.menus = this.resolveMenu(menus);
+    }
+
+    private resolveMenu(menu)
+    {
+        let result: Array<IMenu> = [];
+        menu.forEach(item =>
+        {
+            result.push({
+                name: item.name,
+                label: item.meta.label || "未命名",
+                icon: item.meta.icon || "iconfont iconicon_xitongguanli"
+            });
+        });
+        return result;
     }
 }
 </script>
