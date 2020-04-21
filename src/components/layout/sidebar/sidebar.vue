@@ -30,7 +30,7 @@
 import { component, Component, watch } from "uxmid-web";
 import { ApplicationRepository } from "../../../repository";
 import { IMenu } from "models";
-import { service } from "../../../common/decorator";
+import { repository } from "../../../common/decorator";
 
 /**
  * 表示一个公共侧边栏组件。
@@ -40,7 +40,7 @@ import { service } from "../../../common/decorator";
 @component
 export default class Sidebar extends Component
 {
-    @service("ApplicationRepository")
+    @repository("ApplicationRepository")
     private applicationRepository: ApplicationRepository;
 
     /**

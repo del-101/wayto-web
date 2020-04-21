@@ -9,7 +9,7 @@ import * as services from "src/services";
 import ServiceBase from "src/services/service-base";
 
 /**
- * 服务装饰器
+ * 服务属性装饰器
  */
 export function service(name: string)
 {
