@@ -1,7 +1,7 @@
 {
-  "name": "{{name}}",
-  "description": "{{description}}",
-  "author": "{{author}}",
+  "name": "demo",
+  "description": "test",
+  "author": "wayto",
   "version": "0.1.0",
   "private": true,
   "scripts": {
